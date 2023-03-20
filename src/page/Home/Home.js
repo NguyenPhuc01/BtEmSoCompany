@@ -33,11 +33,11 @@ export default function Home() {
     <Box className={classes.bgHome}>
       <Grid container spacing={2}>
         <Grid item lg={1}></Grid>
-        <Grid item xs={12} lg={10}>
+        <Grid item xs={11} sm={10} sx={{ margin: "0px auto" }}>
           <Box>
             <Carosel />
             <Box className={classes.Recently}>
-              <Typography variant="h5" gutterBottom>
+              <Typography variant="h5" gutterBottom sx={{ marginTop: 3 }}>
                 Gần đây
               </Typography>
               <Box className={classes.txtAll}>
@@ -62,7 +62,7 @@ export default function Home() {
               </Grid>
             </Box>
 
-            <Typography variant="h5" gutterBottom>
+            <Typography variant="h5" gutterBottom sx={{ marginTop: 3 }}>
               Thịnh Hành
             </Typography>
             <Box className={classes.hiddenBox}>

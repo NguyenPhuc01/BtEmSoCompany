@@ -14,6 +14,7 @@ const useStyles = makeStyles({
   },
   bg: {
     border: "none",
+    position: "relative",
   },
   titleCustom: {
     display: "-webkit-box",
@@ -35,7 +36,7 @@ export default function CardComponent(props) {
     <CardActionArea>
       <Card sx={{ height: 200 }} className={classes.bg}>
         <CardMedia
-          sx={{ height: 140 }}
+          sx={{ height: 160 }}
           image={props.img}
           className={classes.image}
         />
