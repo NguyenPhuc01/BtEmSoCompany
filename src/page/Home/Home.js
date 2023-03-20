@@ -10,8 +10,7 @@ import CardComponent from "../../Component/Card/CardComponent";
 import Box from "@mui/material/Box";
 const useStyles = makeStyles({
   bgHome: {
-    backgroundColor: "#170f23",
-    minHeight: "100vh",
+    minHeight: "120vh",
   },
   Recently: {
     display: "flex",
@@ -38,7 +37,9 @@ export default function Home() {
           <Box>
             <Carosel />
             <Box className={classes.Recently}>
-              <h2>Gần đây</h2>
+              <Typography variant="h5" gutterBottom>
+                Gần đây
+              </Typography>
               <Box className={classes.txtAll}>
                 <span> Tất cả</span>
                 <NavigateNextIcon />
@@ -61,7 +62,7 @@ export default function Home() {
               </Grid>
             </Box>
 
-            <Typography variant="h2" gutterBottom>
+            <Typography variant="h5" gutterBottom>
               Thịnh Hành
             </Typography>
             <Box className={classes.hiddenBox}>

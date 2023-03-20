@@ -5,15 +5,14 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
+// import { Scale } from "@mui/icons-material";
 
 const useStyles = makeStyles({
   root: {
-    backgroundColor: "#170f23",
     fontWeight: "bold",
     fontSize: "16px",
   },
   bg: {
-    backgroundColor: "#170f23",
     border: "none",
   },
   titleCustom: {
@@ -21,7 +20,12 @@ const useStyles = makeStyles({
     overflow: "hidden",
     WebkitLineClamp: 2,
     WebkitBoxOrient: "vertical",
-    color: "#fff",
+  },
+  image: {
+    transition: "transform 0.2s ease-in-out",
+    "&:hover": {
+      transform: "scale(1.05)",
+    },
   },
 });
 export default function CardComponent(props) {
@@ -30,7 +34,11 @@ export default function CardComponent(props) {
   return (
     <CardActionArea>
       <Card sx={{ height: 200 }} className={classes.bg}>
-        <CardMedia sx={{ height: 140 }} image={props.img} />
+        <CardMedia
+          sx={{ height: 140 }}
+          image={props.img}
+          className={classes.image}
+        />
         <CardContent className={classes.root}>
           <Typography
             gutterBottom
