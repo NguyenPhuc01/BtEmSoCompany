@@ -4,7 +4,7 @@ export const dataZingChartUsUK = [
     img: "https://i.ytimg.com/vi/0yHtYPeK2Jg/maxresdefault.jpg",
     title: "Thị mầu",
     singerName: "Hoà minzy x Masew",
-    time: "",
+    time: "4.22",
   },
   {
     id: 2,

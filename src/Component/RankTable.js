@@ -11,6 +11,7 @@ const useStyles = makeStyles({
     background: "rgb(0,0,0,0.05)",
     borderRadius: 12,
     padding: "20px 10px",
+    marginBottom: 90,
   },
 
   songImg: {
@@ -52,7 +53,7 @@ export default function RankTable(props) {
       {props.data &&
         props.data.slice(0, 5).map((e) => {
           return (
-            <List style={{ padding: "0px" }}>
+            <List style={{ padding: "0px" }} key={e.id}>
               <ListItem disablePadding>
                 <ListItemButton>
                   <ListItemIcon>
@@ -81,7 +82,7 @@ export default function RankTable(props) {
                       </Box>
                     </Box>
                     <Box>
-                      <Typography variant="subtitle2">4:24</Typography>
+                      <Typography variant="subtitle2">{e.time}</Typography>
                     </Box>
                   </Box>
                 </ListItemButton>

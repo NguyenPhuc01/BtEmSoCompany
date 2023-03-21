@@ -12,6 +12,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import RankTable from "../../Component/RankTable";
 import { dataZingChartUsUK } from "../../ultil/dataZingChartUsUK";
+import Player from "../../Component/Player";
 const useStyles = makeStyles({
   root: {
     "& tbody tr:hover": {
@@ -129,13 +130,13 @@ export default function ZingChart() {
               </Typography>
 
               <Grid container spacing={3}>
-                <Grid item xs={12} sm={4}>
+                <Grid item xs={12} lg={4}>
                   <RankTable category="Việt Nam" data={dataZingChart} />
                 </Grid>
-                <Grid item xs={12} sm={4}>
+                <Grid item xs={12} lg={4}>
                   <RankTable category="US-UK" data={dataZingChartUsUK} />
                 </Grid>
-                <Grid item xs={12} sm={4}>
+                <Grid item xs={12} lg={4}>
                   <RankTable category="K-Pop" data={dataZingChartUsUK} />
                 </Grid>
               </Grid>
