@@ -11,10 +11,20 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import styles from "../Component/Carosel.module.css";
+import Box from "@mui/material/Box";
+import { makeStyles } from "@material-ui/core/styles";
+const useStyles = makeStyles({
+  image: {
+    width: "100%",
+    height: "210px",
+    borderRadius: "8px",
+    objectFit: "cover",
+  },
+});
 export default function Carosel() {
+  const classes = useStyles();
   return (
-    <div className={styles.Carosel}>
+    <Box>
       {" "}
       <Swiper
         spaceBetween={12}
@@ -40,28 +50,26 @@ export default function Carosel() {
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         navigation
         pagination={{ clickable: true }}
-        // onSwiper={(swiper) => console.log(swiper)}
-        // onSlideChange={() => console.log("slide change")}
       >
         <SwiperSlide>
-          <img src={img1} alt="" className={styles.image} />
+          <img src={img1} alt="" className={classes.image} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={img2} alt="" className={styles.image} />
+          <img src={img2} alt="" className={classes.image} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={img3} alt="" className={styles.image} />
+          <img src={img3} alt="" className={classes.image} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={img4} alt="" className={styles.image} />
+          <img src={img4} alt="" className={classes.image} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={img5} alt="" className={styles.image} />
+          <img src={img5} alt="" className={classes.image} />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={img6} alt="" className={styles.image} />
+          <img src={img6} alt="" className={classes.image} />
         </SwiperSlide>
       </Swiper>
-    </div>
+    </Box>
   );
 }

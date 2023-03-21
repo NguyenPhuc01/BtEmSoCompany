@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Grid from "@mui/material/Grid";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
@@ -9,7 +9,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import Avatar from "@mui/material/Avatar";
-import DiamondIcon from "@mui/icons-material/Diamond";
 import Hidden from "@mui/material/Hidden";
 const useStyles = makeStyles({
   headerLeft: {
@@ -19,7 +18,12 @@ const useStyles = makeStyles({
   headerBox: {
     height: "70px",
     display: "flex",
+    justifyContent: "space-between",
     alignItems: "center",
+    position: "fixed",
+    zIndex: 99,
+    width: "100%",
+    background: "#fff",
   },
   searchInput: {
     display: "flex",
@@ -32,13 +36,26 @@ const useStyles = makeStyles({
 });
 export default function Header() {
   const classes = useStyles();
+  const [scrollTop, setScrollTop] = useState(0);
+  const handleScroll = () => {
+    const scrollTop = window.pageYOffset;
+    setScrollTop(scrollTop);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <Box className={classes.headerBox}>
+    <Box className={classes.headerBox} boxShadow={scrollTop > 15 ? 3 : 0}>
       <Grid container spacing={2}>
         <Grid item xs={1}></Grid>
         <Grid item xs={10}>
-          <Grid container spacing={2}>
-            <Grid item xs={7} sm={5}>
+          <Grid container>
+            <Grid item xs={10} sm={5}>
               <Box className={classes.headerLeft}>
                 <Box className={classes.headerLeft}>
                   <Hidden mdDown>
@@ -60,16 +77,18 @@ export default function Header() {
               </Box>
             </Grid>
             <Grid item xs={0} sm={3}></Grid>
-            <Grid item xs={5} sm={4}>
+            <Grid item xs={2} sm={4}>
               <Stack
                 direction="row"
                 alignItems="center"
                 justifyContent="end"
                 spacing={2}
               >
-                <Chip label="Tải bản Windows" />
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                <Hidden smDown>
+                  <Chip label="Tải bản Windows" />
+                  <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                  <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                </Hidden>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
               </Stack>
             </Grid>

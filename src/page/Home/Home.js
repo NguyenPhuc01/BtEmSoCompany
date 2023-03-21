@@ -8,9 +8,11 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@mui/material/Grid";
 import CardComponent from "../../Component/Card/CardComponent";
 import Box from "@mui/material/Box";
+import { Link } from "react-router-dom";
 const useStyles = makeStyles({
   bgHome: {
     minHeight: "120vh",
+    paddingTop: "80px",
   },
   Recently: {
     display: "flex",
@@ -24,7 +26,7 @@ const useStyles = makeStyles({
   },
   hiddenBox: {
     overflow: "hidden",
-    height: 195,
+    height: "221px",
   },
 });
 export default function Home() {
@@ -32,7 +34,13 @@ export default function Home() {
   return (
     <Box className={classes.bgHome}>
       <Grid container spacing={2}>
-        <Grid item lg={1}></Grid>
+        <Grid item lg={1}>
+          <Box>
+            <Link to={"/"}>Home</Link>
+            <br />
+            <Link to={"/zingChart"}>Zingchart</Link>
+          </Box>
+        </Grid>
         <Grid item xs={11} sm={10} sx={{ margin: "0px auto" }}>
           <Box>
             <Carosel />
