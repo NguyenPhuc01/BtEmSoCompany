@@ -10,6 +10,7 @@ import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import Avatar from "@mui/material/Avatar";
 import Hidden from "@mui/material/Hidden";
+import { useNavigate } from "react-router-dom";
 const useStyles = makeStyles({
   headerLeft: {
     display: "flex",
@@ -48,7 +49,7 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
+  const navigate = useNavigate();
   return (
     <Box className={classes.headerBox} boxShadow={scrollTop > 15 ? 3 : 0}>
       <Grid container spacing={2}>
@@ -59,9 +60,10 @@ export default function Header() {
               <Box className={classes.headerLeft}>
                 <Box className={classes.headerLeft}>
                   <Hidden mdDown>
-                    <ArrowBackIcon />
+                    <ArrowBackIcon onClick={() => navigate(-1)} />
                     <ArrowForwardIcon
-                      sx={{ color: "#CCCBCC", margin: "0px 12px" }}
+                      sx={{ margin: "0px 12px" }}
+                      onClick={() => navigate(+1)}
                     />
                   </Hidden>
                 </Box>

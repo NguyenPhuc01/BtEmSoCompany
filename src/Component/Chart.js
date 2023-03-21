@@ -4,11 +4,20 @@ export default function Chart() {
   const options = {
     animationEnabled: true,
     title: {
-      text: "Monthly Sales - 2017",
+      text: "#zingchart",
     },
     axisX: {
+      gridDashType: "dash",
+      lineDashType: "dash",
       labelFormatter: function (e) {
         return CanvasJS.formatDate(e.value, "HH:mm");
+      },
+    },
+    axisY: {
+      gridDashType: "dash",
+      lineDashType: "dash",
+      labelFormatter: function () {
+        return " ";
       },
     },
 
@@ -16,6 +25,7 @@ export default function Chart() {
       {
         yValueFormatString: "##,##%",
         xValueFormatString: "HH:mm",
+
         type: "spline",
         dataPoints: [
           { x: new Date(2023, 2, 21, 9, 0), y: 13 },
