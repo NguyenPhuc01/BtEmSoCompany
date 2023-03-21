@@ -4,14 +4,14 @@ export const dataZingChart = [
     img: "https://hocluat.vn/wp-content/uploads/2022/01/Loi-bai-hat-De-Vuong.jpg",
     title: "Đế vương",
     singerName: "Đình Dũng",
-    time: "4:24",
+    time: "4:04",
   },
   {
     id: 2,
     img: "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/c/e/3/4/ce34451501c9e64070402a50f7660c07.jpg",
     title: "Ngoài 30",
     singerName: "Thái học",
-    time: "4:24",
+    time: "3:44",
   },
   {
     id: 3,
