@@ -21,7 +21,7 @@ const useStyles = makeStyles({
     height: "220px",
     marginBottom: "10px",
     "&:hover $image": {
-      transform: "scale(1.02)",
+      transform: "scale(1.04)",
     },
     "&:hover $cardIcon": {
       opacity: 1,
