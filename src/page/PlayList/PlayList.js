@@ -1,6 +1,7 @@
 import {
   Box,
   Grid,
+  Hidden,
   Paper,
   Table,
   TableBody,
@@ -20,6 +21,7 @@ const useStyles = makeStyles({
   BoxPlayList: {
     padding: "75px 0px 95px 0px",
     background: "linear-gradient(#97BD9E, white)",
+    width: "100%",
     minHeight: "100vh",
   },
   header: {
@@ -47,7 +49,7 @@ export default function PlayList() {
     <Box className={classes.BoxPlayList}>
       <Grid container spacing={2}>
         <Grid item md={1}></Grid>
-        <Grid item md={10}>
+        <Grid item xs={12} md={10}>
           <Box className={classes.header}>
             <Box>
               <img
@@ -100,11 +102,7 @@ export default function PlayList() {
                 component={Paper}
                 sx={{ background: "rgba(0,0,0,0)", border: "none" }}
               >
-                <Table
-                  sx={{ minWidth: 650 }}
-                  aria-label="simple table"
-                  className={classes.root}
-                >
+                <Table aria-label="simple table" className={classes.root}>
                   <TableBody>
                     {dataZingChart.map((row) => (
                       <TableRow
@@ -139,10 +137,12 @@ export default function PlayList() {
                             </Box>
                           </Box>
                         </TableCell>
-                        <TableCell align="left">{row.title}</TableCell>
-                        <TableCell align="right">{row.fat}</TableCell>
-                        <TableCell align="right">{row.carbs}</TableCell>
-                        <TableCell align="right">{row.time}</TableCell>
+                        <Hidden smDown>
+                          <TableCell align="left">{row.title}</TableCell>
+                          <TableCell align="right">{row.fat}</TableCell>
+                          <TableCell align="right">{row.carbs}</TableCell>
+                          <TableCell align="right">{row.time}</TableCell>
+                        </Hidden>
                       </TableRow>
                     ))}
                   </TableBody>
