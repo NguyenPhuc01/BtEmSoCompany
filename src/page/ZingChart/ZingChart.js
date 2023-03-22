@@ -11,7 +11,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import RankTable from "../../Component/RankTable";
 import { dataZingChartUsUK } from "../../ultil/dataZingChartUsUK";
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Hidden } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles({
   root: {
@@ -53,11 +53,7 @@ export default function ZingChart() {
             </Box>
             <Box className={classes.table}>
               <TableContainer component={Paper}>
-                <Table
-                  sx={{ minWidth: 650 }}
-                  aria-label="simple table"
-                  className={classes.root}
-                >
+                <Table aria-label="simple table" className={classes.root}>
                   <TableBody>
                     {dataZingChart.slice(0, limit).map((row) => (
                       <TableRow
@@ -92,10 +88,12 @@ export default function ZingChart() {
                             </Box>
                           </Box>
                         </TableCell>
-                        <TableCell align="left">{row.title}</TableCell>
-                        <TableCell align="right">{row.fat}</TableCell>
-                        <TableCell align="right">{row.carbs}</TableCell>
-                        <TableCell align="right">{row.time}</TableCell>
+                        <Hidden smDown>
+                          <TableCell align="left">{row.title}</TableCell>
+                          <TableCell align="right">{row.fat}</TableCell>
+                          <TableCell align="right">{row.carbs}</TableCell>
+                          <TableCell align="right">{row.time}</TableCell>
+                        </Hidden>
                       </TableRow>
                     ))}
                   </TableBody>
@@ -117,7 +115,7 @@ export default function ZingChart() {
                 )}
               </Box>
             </Box>
-            <Box>
+            <Box sx={{ marginBottom: "100px" }}>
               <Typography
                 variant="h4"
                 gutterBottom

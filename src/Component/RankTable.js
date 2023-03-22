@@ -11,7 +11,6 @@ const useStyles = makeStyles({
     background: "rgb(0,0,0,0.05)",
     borderRadius: 12,
     padding: "20px 10px",
-    marginBottom: 90,
   },
 
   songImg: {

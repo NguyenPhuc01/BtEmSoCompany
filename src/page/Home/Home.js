@@ -60,6 +60,7 @@ export default function Home() {
                 container
                 columns={24}
                 direction="row"
+                spacing={1}
                 justifyContent="space-between"
               >
                 {dataSong.map((e, i) => {

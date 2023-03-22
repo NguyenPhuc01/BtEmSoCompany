@@ -8,8 +8,8 @@ import {
   TableCell,
   TableContainer,
   TableRow,
-  ThemeProvider,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import SportsBaseballIcon from "@mui/icons-material/SportsBaseball";
@@ -18,7 +18,6 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import React from "react";
 import { dataZingChart } from "../../ultil/dataZingChart";
-
 const useStyles = makeStyles((theme) => ({
   BoxPlayList: {
     padding: "75px 0px 95px 0px",
@@ -32,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
   },
   ListSong: {},
   listIcon: {
+    margin: 15,
     display: "flex",
     alignItems: "center",
   },
@@ -47,12 +47,18 @@ const useStyles = makeStyles((theme) => ({
 }));
 export default function PlayList() {
   const classes = useStyles();
+  const matches = useMediaQuery("(max-width:600px)");
   return (
     <Box className={classes.BoxPlayList}>
       <Grid container spacing={2}>
         <Grid item md={1}></Grid>
         <Grid item xs={12} md={10}>
-          <Box className={classes.header}>
+          <Box
+            className={classes.header}
+            sx={{
+              flexDirection: matches ? "column" : "row",
+            }}
+          >
             <Box>
               <img
                 src="https://i1.sndcdn.com/artworks-000314434029-tr93rb-t500x500.jpg"
@@ -60,35 +66,37 @@ export default function PlayList() {
                 style={{ width: 232, height: 232 }}
               />
             </Box>
-            <Box sx={{ marginLeft: 5 }}>
-              <Typography
-                variant="h5"
-                sx={{ fontWeight: "bold", color: "#fff" }}
-              >
-                Playlist
-              </Typography>
-              <Typography
-                variant="h1"
-                sx={{ fontWeight: "bold", color: "#fff" }}
-              >
-                Vũ. Radio
-              </Typography>
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <SportsBaseballIcon sx={{ color: "#1DD55F" }} />
+            <Hidden smDown>
+              <Box sx={{ marginLeft: 5 }}>
                 <Typography
-                  variant="subtitle1"
-                  sx={{ fontWeight: "bold", marginLeft: 1 }}
+                  variant="h5"
+                  sx={{ fontWeight: "bold", color: "#fff" }}
                 >
-                  Spotify .7.112 lượt thích .50 bài hát
-                  <span style={{ fontWeight: 100 }}> khoảng 3 giờ</span>
+                  Playlist
                 </Typography>
+                <Typography
+                  variant="h1"
+                  sx={{ fontWeight: "bold", color: "#fff" }}
+                >
+                  Vũ. Radio
+                </Typography>
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <SportsBaseballIcon sx={{ color: "#1DD55F" }} />
+                  <Typography
+                    variant="subtitle1"
+                    sx={{ fontWeight: "bold", marginLeft: 1 }}
+                  >
+                    Spotify .7.112 lượt thích .50 bài hát
+                    <span style={{ fontWeight: 100 }}> khoảng 3 giờ</span>
+                  </Typography>
+                </Box>
               </Box>
-            </Box>
+            </Hidden>
           </Box>
           <Box className={classes.ListSong}>
             <Box className={classes.listIcon}>
@@ -111,6 +119,15 @@ export default function PlayList() {
                         key={row.id}
                         sx={{
                           "&:last-child td, &:last-child th": { border: 0 },
+                        }}
+                        onClick={() => {
+                          console.log("log", row);
+                          const audio = new Audio(row.src);
+                          console.log(
+                            "🚀 ~ file: PlayList.js:118 ~ PlayList ~ audio:",
+                            audio
+                          );
+                          audio.play();
                         }}
                       >
                         <TableCell align="center">

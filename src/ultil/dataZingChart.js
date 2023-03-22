@@ -1,3 +1,9 @@
+import song1 from "../ultil/Song/deVuong.mp3";
+import song2 from "../ultil/Song/ngoai30.mp3";
+import song3 from "../ultil/Song/batTinhYeuLen.mp3";
+import song4 from "../ultil/Song/emLaKeDangThuong.mp3";
+import song5 from "../ultil/Song/cuoiCungThi.mp3";
+import song6 from "../ultil/Song/thiMau.mp3";
 export const dataZingChart = [
   {
     id: 1,
@@ -5,6 +11,7 @@ export const dataZingChart = [
     title: "Đế vương",
     singerName: "Đình Dũng",
     time: "4:04",
+    src: song1,
   },
   {
     id: 2,
@@ -12,6 +19,7 @@ export const dataZingChart = [
     title: "Ngoài 30",
     singerName: "Thái học",
     time: "3:44",
+    src: song2,
   },
   {
     id: 3,
@@ -19,6 +27,7 @@ export const dataZingChart = [
     title: "Bật tình yêu lên",
     singerName: "Hoà minzy,Tăng Duy Tân",
     time: "4:24",
+    src: song3,
   },
   {
     id: 4,
@@ -26,6 +35,7 @@ export const dataZingChart = [
     title: "Em là kẻ đáng thương",
     singerName: "Phát huy T4",
     time: "4:14",
+    src: song4,
   },
   {
     id: 5,
@@ -33,13 +43,15 @@ export const dataZingChart = [
     title: "Cuối cùng thì",
     singerName: "Jack-J97",
     time: "3:45",
+    src: song5,
   },
   {
     id: 6,
     img: "https://i.ytimg.com/vi/0yHtYPeK2Jg/maxresdefault.jpg",
     title: "Thị mầu",
     singerName: "Hoà minzy x Masew",
-    time: "",
+    time: "3.53",
+    src: song6,
   },
   {
     id: 7,
@@ -47,6 +59,7 @@ export const dataZingChart = [
     title: "Phố hoa lệ",
     singerName: "Chu Bin",
     time: "3:58",
+    src: "",
   },
   {
     id: 8,
@@ -54,6 +67,7 @@ export const dataZingChart = [
     title: "Gió",
     singerName: "Jank",
     time: "4:21",
+    src: "",
   },
   {
     id: 9,
@@ -61,6 +75,7 @@ export const dataZingChart = [
     title: "Khuất lối",
     singerName: "H-Kray",
     time: "3:21",
+    src: "",
   },
   {
     id: 10,
@@ -68,5 +83,6 @@ export const dataZingChart = [
     title: "Là anh",
     singerName: "Phạm Lịch",
     time: "4:52",
+    src: "",
   },
 ];
