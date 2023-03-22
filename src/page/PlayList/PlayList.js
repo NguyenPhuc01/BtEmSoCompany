@@ -8,6 +8,7 @@ import {
   TableCell,
   TableContainer,
   TableRow,
+  ThemeProvider,
   Typography,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
@@ -17,7 +18,8 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import React from "react";
 import { dataZingChart } from "../../ultil/dataZingChart";
-const useStyles = makeStyles({
+
+const useStyles = makeStyles((theme) => ({
   BoxPlayList: {
     padding: "75px 0px 95px 0px",
     background: "linear-gradient(#97BD9E, white)",
@@ -42,7 +44,7 @@ const useStyles = makeStyles({
       backgroundColor: "#eee",
     },
   },
-});
+}));
 export default function PlayList() {
   const classes = useStyles();
   return (
