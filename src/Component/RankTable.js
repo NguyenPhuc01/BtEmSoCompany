@@ -1,11 +1,11 @@
-import { Box, makeStyles } from "@material-ui/core";
-import { Button, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import React from "react";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
+import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles({
   rankTableBox: {
     background: "rgb(0,0,0,0.05)",

@@ -3,6 +3,7 @@ import Header from "./Component/Header.js/Header";
 import Home from "./page/Home/Home";
 import ZingChart from "./page/ZingChart/ZingChart";
 import Player from "./Component/Player";
+import PlayList from "./page/PlayList/PlayList";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/zingChart" element={<ZingChart />} />
+        <Route path="/playList" element={<PlayList />} />
       </Routes>
       <Player />
     </BrowserRouter>

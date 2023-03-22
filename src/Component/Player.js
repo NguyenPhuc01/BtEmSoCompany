@@ -1,5 +1,4 @@
-import { Box, Grid, makeStyles } from "@material-ui/core";
-import { Slider, Stack, Tooltip, Typography } from "@mui/material";
+import { Box, Grid, Slider, Tooltip, Typography } from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import ShuffleIcon from "@mui/icons-material/Shuffle";
@@ -13,6 +12,7 @@ import MicNoneSharpIcon from "@mui/icons-material/MicNoneSharp";
 import CastConnectedSharpIcon from "@mui/icons-material/CastConnectedSharp";
 import { VolumeDown } from "@mui/icons-material";
 import ListSharpIcon from "@mui/icons-material/ListSharp";
+import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles({
   boxPlayer: {
     position: "fixed",

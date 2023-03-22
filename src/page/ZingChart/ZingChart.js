@@ -1,4 +1,3 @@
-import { Box, Grid, makeStyles } from "@material-ui/core";
 import React, { useState } from "react";
 import Chart from "../../Component/Chart";
 import Table from "@mui/material/Table";
@@ -12,7 +11,8 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import RankTable from "../../Component/RankTable";
 import { dataZingChartUsUK } from "../../ultil/dataZingChartUsUK";
-import Player from "../../Component/Player";
+import { Box, Grid } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles({
   root: {
     "& tbody tr:hover": {

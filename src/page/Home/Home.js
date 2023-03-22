@@ -4,11 +4,11 @@ import Typography from "@mui/material/Typography";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import { dataSong } from "../../ultil/dataSong";
 import { dataPopular } from "../../ultil/dataPopular";
-import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@mui/material/Grid";
 import CardComponent from "../../Component/Card/CardComponent";
 import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
+import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles({
   bgHome: {
     minHeight: "120vh",

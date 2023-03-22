@@ -4,13 +4,13 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Box from "@mui/material/Box";
 import Input from "@mui/material/Input";
-import { makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@mui/icons-material/Search";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import Avatar from "@mui/material/Avatar";
 import Hidden from "@mui/material/Hidden";
 import { useNavigate } from "react-router-dom";
+import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles({
   headerLeft: {
     display: "flex",
