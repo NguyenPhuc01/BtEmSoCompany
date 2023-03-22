@@ -24,7 +24,7 @@ const useStyles = makeStyles({
     position: "fixed",
     zIndex: 99,
     width: "100%",
-    background: "#fff",
+    // background: "#fff",
   },
   searchInput: {
     display: "flex",
@@ -42,7 +42,6 @@ export default function Header() {
     const scrollTop = window.pageYOffset;
     setScrollTop(scrollTop);
   };
-
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -51,7 +50,11 @@ export default function Header() {
   }, []);
   const navigate = useNavigate();
   return (
-    <Box className={classes.headerBox} boxShadow={scrollTop > 15 ? 3 : 0}>
+    <Box
+      className={classes.headerBox}
+      style={{ background: scrollTop > 15 ? "#fff" : "rgba(0,0,0,0)" }}
+      boxShadow={scrollTop > 15 ? 3 : 0}
+    >
       <Grid container spacing={2}>
         <Grid item xs={1}></Grid>
         <Grid item xs={10}>

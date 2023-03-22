@@ -39,6 +39,8 @@ export default function Home() {
             <Link to={"/"}>Home</Link>
             <br />
             <Link to={"/zingChart"}>Zingchart</Link>
+            <br />
+            <Link to={"/playList"}>playlist</Link>
           </Box>
         </Grid>
         <Grid item xs={11} sm={10} sx={{ margin: "0px auto" }}>
