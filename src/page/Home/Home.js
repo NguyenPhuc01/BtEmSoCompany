@@ -76,7 +76,12 @@ export default function Home() {
             <Typography variant="h5" gutterBottom sx={{ marginTop: 3 }}>
               Thịnh Hành
             </Typography>
-            <Box className={classes.hiddenBox}>
+            <Box
+              className={classes.hiddenBox}
+              sx={{
+                marginBottom: "100px",
+              }}
+            >
               <Grid
                 container
                 columns={21}
