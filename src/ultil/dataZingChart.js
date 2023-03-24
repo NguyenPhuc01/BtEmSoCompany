@@ -4,6 +4,10 @@ import song3 from "../ultil/Song/batTinhYeuLen.mp3";
 import song4 from "../ultil/Song/emLaKeDangThuong.mp3";
 import song5 from "../ultil/Song/cuoiCungThi.mp3";
 import song6 from "../ultil/Song/thiMau.mp3";
+import song7 from "../ultil/Song/phoHoaLe.mp3";
+import song8 from "../ultil/Song/gio.mp3";
+import song9 from "../ultil/Song/khuatLoi.mp3";
+import song10 from "../ultil/Song/laAnh.mp3";
 export const dataZingChart = [
   {
     id: 1,
@@ -59,7 +63,7 @@ export const dataZingChart = [
     name: "Phố hoa lệ",
     writer: "Chu Bin",
     time: "3:58",
-    src: "",
+    src: song7,
   },
   {
     id: 8,
@@ -67,7 +71,7 @@ export const dataZingChart = [
     name: "Gió",
     writer: "Jank",
     time: "4:21",
-    src: "",
+    src: song8,
   },
   {
     id: 9,
@@ -75,7 +79,7 @@ export const dataZingChart = [
     name: "Khuất lối",
     writer: "H-Kray",
     time: "3:21",
-    src: "",
+    src: song9,
   },
   {
     id: 10,
@@ -83,6 +87,6 @@ export const dataZingChart = [
     name: "Là anh",
     writer: "Phạm Lịch",
     time: "4:52",
-    src: "",
+    src: song10,
   },
 ];

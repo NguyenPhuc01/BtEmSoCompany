@@ -45,12 +45,11 @@ const TinyText = styled(Typography)({
   letterSpacing: 0.2,
 });
 
-export default function MusicPlayerSlider() {
+export default function MusicPlayerSlider({ data, audioIndex, setAudioIndex }) {
   const audioRef = React.useRef();
-  const [audioIndex, setAudioIndex] = React.useState(0);
   const theme = useTheme();
   const [duration, setDuration] = React.useState();
-
+  const [volume, setVolume] = React.useState(50);
   const [paused, setPaused] = React.useState(false);
   const [currentTime, setCurrentTime] = React.useState(0);
   function formatDuration(value) {
@@ -91,7 +90,15 @@ export default function MusicPlayerSlider() {
       setAudioIndex((prev) => prev - 1);
     }
   };
-
+  const endedEvent = () => {
+    if (audioIndex < data.length - 1) {
+      setAudioIndex((prev) => prev + 1);
+    } else if (audioIndex === data.length - 1) {
+      setAudioIndex(0);
+    }
+  };
+  //   console.log("audioIndex", audioIndex);
+  //   console.log("audioIndex", data.length);
   return (
     <Box
       sx={{
@@ -107,31 +114,34 @@ export default function MusicPlayerSlider() {
       <Grid container>
         <Grid item md={3}>
           <Hidden smDown>
-            <Widget>
-              <Box sx={{ display: "flex", alignItems: "center" }}>
-                <CoverImage>
-                  <img
-                    alt="can't win - Chilling Sunday"
-                    src="https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/9/c/e/f/9cef213c19ead72f3d7c549e9f66af16.jpg"
-                  />
-                </CoverImage>
-                <Box sx={{ ml: 1.5, minWidth: 0 }}>
-                  <Typography
-                    variant="caption"
-                    color="text.secondary"
-                    fontWeight={500}
-                  >
-                    Jun Pulse
-                  </Typography>
-                  <Typography noWrap>
-                    <b>คนเก่าเขาทำไว้ดี (Can&apos;t win)</b>
-                  </Typography>
-                  <Typography noWrap letterSpacing={-0.25}>
-                    Chilling Sunday &mdash; คนเก่าเขาทำไว้ดี
-                  </Typography>
-                </Box>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                height: "100%",
+                paddingLeft: 4,
+              }}
+            >
+              <CoverImage>
+                <img
+                  alt="can't win - Chilling Sunday"
+                  src={data[audioIndex].img}
+                />
+              </CoverImage>
+              <Box sx={{ ml: 1.5, minWidth: 0 }}>
+                <Typography
+                  variant="caption"
+                  color="text.secondary"
+                  fontWeight={500}
+                ></Typography>
+                <Typography noWrap>
+                  <b>{data[audioIndex].name}</b>
+                </Typography>
+                <Typography noWrap letterSpacing={-0.25}>
+                  {data[audioIndex].writer}
+                </Typography>
               </Box>
-            </Widget>
+            </Box>
           </Hidden>
         </Grid>
         <Grid item xs={12} md={6}>
@@ -238,7 +248,11 @@ export default function MusicPlayerSlider() {
                 <VolumeDownRounded htmlColor={lightIconColor} />
                 <Slider
                   aria-label="Volume"
-                  defaultValue={30}
+                  value={volume}
+                  onChange={(_, value) => {
+                    audioRef.current.volume = value / 100;
+                    setVolume(value);
+                  }}
                   sx={{
                     color:
                       theme.palette.mode === "dark"
@@ -269,10 +283,10 @@ export default function MusicPlayerSlider() {
       <Box>
         <audio
           ref={audioRef}
-          src={dataZingChart[audioIndex].src}
+          src={data[audioIndex].src}
           onLoadedData={handleLoadedData}
           onTimeUpdate={() => setCurrentTime(audioRef.current.currentTime)}
-          onEnded={() => setPaused(false)}
+          onEnded={endedEvent}
         />
       </Box>
     </Box>
