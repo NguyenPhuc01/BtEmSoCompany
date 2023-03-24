@@ -82,9 +82,9 @@ export default function ZingChart() {
                                 variant="subtitle1"
                                 sx={{ fontWeight: 600 }}
                               >
-                                {row.title}
+                                {row.name}
                               </Typography>
-                              <span>{row.singerName}</span>
+                              <span>{row.writer}</span>
                             </Box>
                           </Box>
                         </TableCell>

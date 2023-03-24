@@ -18,6 +18,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import React from "react";
 import { dataZingChart } from "../../ultil/dataZingChart";
+import "../../App.css";
 const useStyles = makeStyles((theme) => ({
   BoxPlayList: {
     padding: "75px 0px 95px 0px",
@@ -150,9 +151,9 @@ export default function PlayList() {
                                 variant="subtitle1"
                                 sx={{ fontWeight: 600 }}
                               >
-                                {row.title}
+                                {row.name}
                               </Typography>
-                              <span>{row.singerName}</span>
+                              <span>{row.writer}</span>
                             </Box>
                           </Box>
                         </TableCell>

@@ -2,8 +2,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./Component/Header.js/Header";
 import Home from "./page/Home/Home";
 import ZingChart from "./page/ZingChart/ZingChart";
-import Player from "./Component/Player";
+// import Player from "./Component/Player";
 import PlayList from "./page/PlayList/PlayList";
+import MusicPlayerSlider from "./Component/MusicPlayerSlider";
 
 function App() {
   return (
@@ -13,8 +14,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/zingChart" element={<ZingChart />} />
         <Route path="/playList" element={<PlayList />} />
+        <Route path="/MusicPlayerSlider" element={<MusicPlayerSlider />} />
       </Routes>
-      <Player />
+      <MusicPlayerSlider />
     </BrowserRouter>
   );
 }

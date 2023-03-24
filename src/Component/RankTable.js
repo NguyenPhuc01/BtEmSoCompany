@@ -75,9 +75,9 @@ export default function RankTable(props) {
                           variant="subtitle1"
                           sx={{ fontWeight: 600 }}
                         >
-                          {e.title}
+                          {e.name}
                         </Typography>
-                        <span>{e.singerName}</span>
+                        <span>{e.writer}</span>
                       </Box>
                     </Box>
                     <Box>
