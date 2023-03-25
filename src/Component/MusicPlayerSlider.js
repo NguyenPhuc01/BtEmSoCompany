@@ -13,7 +13,6 @@ import VolumeUpRounded from "@mui/icons-material/VolumeUpRounded";
 import VolumeDownRounded from "@mui/icons-material/VolumeDownRounded";
 import { Grid, Hidden } from "@mui/material";
 import { dataZingChart } from "../ultil/dataZingChart";
-
 const Widget = styled("div")(({ theme }) => ({
   padding: 16,
   borderRadius: 16,
@@ -24,7 +23,6 @@ const Widget = styled("div")(({ theme }) => ({
   backgroundColor:
     theme.palette.mode === "dark" ? "rgba(0,0,0,0.6)" : "rgba(255,255,255,0.4)",
 }));
-
 const CoverImage = styled("div")({
   width: 65,
   height: 65,
@@ -35,21 +33,21 @@ const CoverImage = styled("div")({
   backgroundColor: "rgba(0,0,0,0.08)",
   "& > img": {
     width: "100%",
+    height: "100%",
+    objectFit: "cover",
   },
 });
-
 const TinyText = styled(Typography)({
   fontSize: "0.75rem",
   opacity: 0.6,
   fontWeight: 500,
   letterSpacing: 0.2,
 });
-
 export default function MusicPlayerSlider({ data, audioIndex, setAudioIndex }) {
   const audioRef = React.useRef();
   const theme = useTheme();
   const [duration, setDuration] = React.useState();
-  const [volume, setVolume] = React.useState(50);
+  const [volume, setVolume] = React.useState(30);
   const [paused, setPaused] = React.useState(false);
   const [currentTime, setCurrentTime] = React.useState(0);
   function formatDuration(value) {

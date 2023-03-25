@@ -20,6 +20,8 @@ import React, { useState } from "react";
 import { dataZingChart } from "../../ultil/dataZingChart";
 import "../../App.css";
 import MusicPlayerSlider from "../../Component/MusicPlayerSlider";
+import WaveAnimation from "../../Component/WaveAnimation";
+import Wave from "react-wavify/lib";
 const useStyles = makeStyles((theme) => ({
   BoxPlayList: {
     padding: "75px 0px 150px 0px",
@@ -41,17 +43,12 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
   },
-  root: {
-    "& tbody tr:hover": {
-      backgroundColor: "#eee",
-    },
-  },
 }));
 export default function PlayList() {
   const classes = useStyles();
   const matches = useMediaQuery("(max-width:600px)");
   const [audioIndex, setAudioIndex] = useState(0);
-  
+
   return (
     <>
       <Box className={classes.BoxPlayList}>
@@ -117,7 +114,7 @@ export default function PlayList() {
                   component={Paper}
                   sx={{ background: "rgba(0,0,0,0)", border: "none" }}
                 >
-                  <Table aria-label="simple table" className={classes.root}>
+                  <Table aria-label="simple table">
                     <TableBody>
                       {dataZingChart.map((row, i) => (
                         <TableRow
@@ -125,6 +122,7 @@ export default function PlayList() {
                           sx={{
                             "&:last-child td, &:last-child th": { border: 0 },
                           }}
+                          hover
                           onClick={() => {
                             setAudioIndex(i);
                           }}
@@ -134,16 +132,19 @@ export default function PlayList() {
                           </TableCell>
                           <TableCell component="th" scope="row">
                             <Box className={classes.songImg}>
-                              <img
-                                src={row.img}
-                                alt=""
-                                style={{
-                                  width: 40,
-                                  height: 40,
-                                  marginRight: 10,
-                                  borderRadius: 8,
-                                }}
-                              />
+                              <Box sx={{ position: "relative" }}>
+                                <img
+                                  src={row.img}
+                                  alt=""
+                                  style={{
+                                    width: 40,
+                                    height: 40,
+                                    marginRight: 10,
+                                    borderRadius: 8,
+                                  }}
+                                />
+                              </Box>
+
                               <Box>
                                 <Typography
                                   variant="subtitle1"
@@ -154,11 +155,10 @@ export default function PlayList() {
                                 <span>{row.writer}</span>
                               </Box>
                             </Box>
+                        
                           </TableCell>
                           <Hidden smDown>
                             <TableCell align="left">{row.title}</TableCell>
-                            <TableCell align="right">{row.fat}</TableCell>
-                            <TableCell align="right">{row.carbs}</TableCell>
                             <TableCell align="right">{row.time}</TableCell>
                           </Hidden>
                         </TableRow>

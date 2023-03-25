@@ -29,6 +29,12 @@ const useStyles = makeStyles({
     justifyContent: "center",
     marginTop: 20,
   },
+  hiddenName: {
+    display: "-webkit-box",
+    overflow: "hidden",
+    WebkitLineClamp: 1,
+    WebkitBoxOrient: "vertical",
+  },
 });
 export default function RankTable(props) {
   const classes = useStyles();
@@ -74,10 +80,11 @@ export default function RankTable(props) {
                         <Typography
                           variant="subtitle1"
                           sx={{ fontWeight: 600 }}
+                          className={classes.hiddenName}
                         >
                           {e.name}
                         </Typography>
-                        <span>{e.writer}</span>
+                        <span className={classes.hiddenName}>{e.writer}</span>
                       </Box>
                     </Box>
                     <Box>
