@@ -80,7 +80,11 @@ export default function MusicPlayerSlider({ data, audioIndex, setAudioIndex }) {
     }
   };
   const handleNextSong = () => {
-    setAudioIndex((prev) => prev + 1);
+    if (audioIndex === data.length - 1) {
+      setAudioIndex(0);
+    } else {
+      setAudioIndex((prev) => prev + 1);
+    }
   };
   const handlePrevSong = () => {
     if (audioIndex > 0) {
