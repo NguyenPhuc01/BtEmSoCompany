@@ -12,7 +12,6 @@ import FastRewindRounded from "@mui/icons-material/FastRewindRounded";
 import VolumeUpRounded from "@mui/icons-material/VolumeUpRounded";
 import VolumeDownRounded from "@mui/icons-material/VolumeDownRounded";
 import { Grid, Hidden } from "@mui/material";
-import { dataZingChart } from "../ultil/dataZingChart";
 const Widget = styled("div")(({ theme }) => ({
   padding: 16,
   borderRadius: 16,
@@ -110,7 +109,7 @@ export default function MusicPlayerSlider({ data, audioIndex, setAudioIndex }) {
       }}
     >
       <Grid container>
-        <Grid item md={3}>
+        <Grid item sm={3} md={3}>
           <Hidden smDown>
             <Box
               sx={{
@@ -142,7 +141,7 @@ export default function MusicPlayerSlider({ data, audioIndex, setAudioIndex }) {
             </Box>
           </Hidden>
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} sm={6} md={6}>
           <Widget>
             <Box
               sx={{
@@ -234,7 +233,7 @@ export default function MusicPlayerSlider({ data, audioIndex, setAudioIndex }) {
             </Box>
           </Widget>
         </Grid>
-        <Grid item md={3} sx={{ margin: "auto" }}>
+        <Grid item sm={3} md={3} sx={{ margin: "auto" }}>
           <Hidden smDown>
             <Box>
               <Stack

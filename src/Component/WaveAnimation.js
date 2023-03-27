@@ -1,15 +1,13 @@
-import { Box, Paper } from "@mui/material";
+import { Box } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Wave from "react-wavify";
 import React from "react";
-
 const useStyles = makeStyles({
   wave: {
     position: "absolute",
     left: 0,
   },
 });
-
 export default function WaveAnimation() {
   const classes = useStyles();
   return (

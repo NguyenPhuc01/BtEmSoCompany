@@ -65,7 +65,7 @@ export default function Home() {
               >
                 {dataSong.map((e, i) => {
                   return (
-                    <Grid item xs={12} sm={5} md={5} lg={3} key={i}>
+                    <Grid item xs={12} sm={7} md={6} lg={3} key={i}>
                       <CardComponent img={e.img} title={e.title} />
                     </Grid>
                   );

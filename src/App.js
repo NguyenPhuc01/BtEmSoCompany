@@ -3,7 +3,6 @@ import Header from "./Component/Header.js/Header";
 import Home from "./page/Home/Home";
 import ZingChart from "./page/ZingChart/ZingChart";
 import PlayList from "./page/PlayList/PlayList";
-import MusicPlayerSlider from "./Component/MusicPlayerSlider";
 
 function App() {
   return (

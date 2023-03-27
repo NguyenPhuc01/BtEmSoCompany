@@ -20,8 +20,7 @@ import React, { useState } from "react";
 import { dataZingChart } from "../../ultil/dataZingChart";
 import "../../App.css";
 import MusicPlayerSlider from "../../Component/MusicPlayerSlider";
-import WaveAnimation from "../../Component/WaveAnimation";
-import Wave from "react-wavify/lib";
+
 const useStyles = makeStyles((theme) => ({
   BoxPlayList: {
     padding: "75px 0px 150px 0px",
@@ -155,7 +154,6 @@ export default function PlayList() {
                                 <span>{row.writer}</span>
                               </Box>
                             </Box>
-                        
                           </TableCell>
                           <Hidden smDown>
                             <TableCell align="left">{row.title}</TableCell>
